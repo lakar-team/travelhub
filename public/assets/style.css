@@ -1,12 +1,35 @@
-:root{--bg:#fbfaf6;--fg:#1d2b2a;--accent:#1f7a5c;--card:#fff}
-@media (prefers-color-scheme:dark){:root{--bg:#121a19;--fg:#e8efed;--accent:#4fc19a;--card:#1b2625}}
+:root{--bg:#fbfaf6;--fg:#1d2b2a;--accent:#1f7a5c;--card:#fff;--muted:#5b6b69}
+@media (prefers-color-scheme:dark){:root{--bg:#121a19;--fg:#e8efed;--accent:#4fc19a;--card:#1b2625;--muted:#9bb0ac}}
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
-.hero{padding:4rem 1rem;text-align:center;background:linear-gradient(135deg,#1f7a5c,#0f3d4a);color:#fff}
-.hero h1{margin:0 0 .5rem;font-size:clamp(2rem,6vw,3.2rem)}
-.btn{display:inline-block;margin-top:1rem;padding:.7rem 1.4rem;background:#fff;color:#0f3d4a;border-radius:999px;text-decoration:none;font-weight:600}
-main,footer{max-width:960px;margin:0 auto;padding:1rem 1rem 2rem}
-h2{color:var(--accent)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-article{background:var(--card);padding:1rem 1.2rem;border-radius:12px;box-shadow:0 1px 4px #0002}
-footer{font-size:.85rem;opacity:.7}
+a{color:var(--accent)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;max-width:1100px;margin:0 auto}
+nav .brand{font-weight:700;text-decoration:none;color:var(--fg)}
+nav a.cta{background:var(--accent);color:#fff;padding:.45rem 1rem;border-radius:999px;text-decoration:none;font-size:.9rem}
+.hero{min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:3rem 1rem;color:#fff;background:linear-gradient(rgba(10,40,45,.55),rgba(10,40,45,.65)),linear-gradient(135deg,#1f7a5c,#0f3d4a);background-size:cover;background-position:center}
+.hero.has-img{background-image:linear-gradient(rgba(10,40,45,.5),rgba(10,40,45,.65)),var(--hero-img)}
+.hero h1{margin:0 0 .6rem;font-size:clamp(2rem,6vw,3.4rem);max-width:18ch}
+.hero p{max-width:46ch;font-size:1.1rem}
+.btn{display:inline-block;margin-top:1.2rem;padding:.8rem 1.6rem;background:#fff;color:#0f3d4a;border-radius:999px;text-decoration:none;font-weight:700;border:0;font-size:1rem;cursor:pointer}
+.btn.green{background:var(--accent);color:#fff}
+section,footer{max-width:1100px;margin:0 auto;padding:2rem 1rem}
+h2{color:var(--accent);font-size:1.7rem}
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.place{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;color:#fff;text-decoration:none;display:flex;align-items:flex-end;background:linear-gradient(135deg,#2c8f6e,#14465a)}
+.place img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.place span{position:relative;padding:1rem;width:100%;background:linear-gradient(transparent,#000a);font-size:1.15rem;font-weight:600}
+.place small{display:block;font-weight:400;opacity:.9}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.gallery .slot,.gallery img{aspect-ratio:4/3;width:100%;object-fit:cover;border-radius:12px;background:linear-gradient(135deg,#2c8f6e,#14465a);cursor:zoom-in}
+.gallery .slot{display:flex;align-items:center;justify-content:center;color:#fff9;font-size:.9rem;cursor:default}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.fact{background:var(--card);padding:1rem 1.2rem;border-radius:12px;box-shadow:0 1px 4px #0002}
+.fact h3{margin:.1rem 0 .4rem;font-size:1rem}
+.tbc{color:var(--muted);font-style:italic}
+.signup-box{background:var(--card);border-radius:16px;padding:1.5rem;box-shadow:0 1px 6px #0002;text-align:center}
+.signup{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:.8rem}
+.signup input[type=email]{flex:1 1 240px;max-width:340px;padding:.8rem 1rem;border:1px solid #8a9;border-radius:999px;font-size:1rem}
+.signup .note,.consent{width:100%;font-size:.8rem;color:var(--muted)}
+.lightbox{position:fixed;inset:0;background:#000d;display:flex;align-items:center;justify-content:center;z-index:9;cursor:zoom-out}
+.lightbox[hidden]{display:none}.lightbox img{max-width:94vw;max-height:92vh;border-radius:8px}
+footer{font-size:.85rem;color:var(--muted)}
