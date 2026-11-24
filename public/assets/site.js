@@ -6,9 +6,8 @@
   document.querySelectorAll("[data-whatsapp]").forEach(function(a){
     if (S.whatsapp) a.href = "https://wa.me/" + S.whatsapp; else a.hidden = true;
   });
-  document.querySelectorAll("form.signup").forEach(function(f){
-    if (S.signupFormAction) { f.action = S.signupFormAction; f.method = "post"; }
-    else f.addEventListener("submit", function(e){ e.preventDefault(); f.querySelector(".note").textContent = "Signup opens soon. Please check back!"; });
+  document.querySelectorAll("[data-signup]").forEach(function(a){
+    if (S.signupUrl) { a.href = S.signupUrl; a.target = "_blank"; a.rel = "noopener"; }
   });
   // simple lightbox for gallery images
   var box = document.createElement("div"); box.className = "lightbox"; box.hidden = true;
